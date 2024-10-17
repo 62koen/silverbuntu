@@ -1,5 +1,6 @@
 ---
 name: build-ublue-custom
+recipe: recipe.yml
 on:
   pull_request:
     branches:
