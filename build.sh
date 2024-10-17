@@ -5,6 +5,7 @@ set -ouex pipefail
 RELEASE="$(rpm -E %fedora)"
 
 rpm-ostree override remove \
+    htop \
     gnome-classic-session \
 	gnome-classic-session-xsession \
     gnome-shell-extension-apps-menu \
@@ -20,18 +21,19 @@ rpm-ostree install \
 
 # extensions
 rpm-ostree install \
+    gnome-shell-extension-appindicator \
+    gnome-shell-extension-no-overview \
+    gnome-shell-extension-dash-to-dock \
+    gnome-shell-extension-user-theme \
+    gnome-shell-extension-drive-menu
+
+# os appearance
+rpm-ostree install \
     gnome-shell-theme-yaru
-    # gnome-shell-extension-appindicator \
-    # gnome-shell-extension-no-overview \
-    # gnome-shell-extension-dash-to-dock \
-    # gnome-shell-extension-user-theme \
-    # gnome-shell-extension-drive-menu
 
 # programs
 rpm-ostree install \
-    distrobox \
     gcc \
-    gnome-tweaks \
     make \
     opendyslexic-fonts \
     samba
