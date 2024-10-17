@@ -26,8 +26,6 @@ make \
 opendyslexic-fonts \
 samba
 
-flatpak install com.mattjakeman.ExtensionManager
-
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
 
