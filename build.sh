@@ -13,18 +13,31 @@ RELEASE="$(rpm -E %fedora)"
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
+rpm-ostree override remove \
+    gnome-shell-extension-apps-menu \
+    gnome-shell-extension-launch-new-instance \
+    gnome-shell-extension-places-menu \
+    gnome-shell-extension-window-list \
+    gnome-shell-extension-background-logo
+
 rpm-ostree install \
-https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
-https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm \
-gnome-shell-theme-yaru \
-gnome-shell-extension-appindicator \
-gnome-shell-extension-no-overview \
-gnome-shell-extension-dash-to-dock \
-gnome-shell-extension-user-theme \
-gnome-shell-extension-drive-menu \
-make \
-opendyslexic-fonts \
-samba
+    https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
+    https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm 
+
+rpm-ostree install \
+    gnome-shell-theme-yaru \
+    gnome-shell-extension-appindicator \
+    gnome-shell-extension-no-overview \
+    gnome-shell-extension-dash-to-dock \
+    gnome-shell-extension-user-theme \
+    gnome-shell-extension-drive-menu
+
+rpm-ostree install \
+    gcc \
+    gnome-tweaks \
+    make \
+    opendyslexic-fonts \
+    samba
 
 # this would install a package from rpmfusion
 # rpm-ostree install vlc
