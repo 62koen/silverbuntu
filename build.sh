@@ -35,6 +35,7 @@ rpm-ostree install \
     opendyslexic-fonts \
     samba
 
+# services
 systemctl enable flatpak-add-flathub-repo.service
 systemctl enable flatpak-replace-fedora-apps.service
 systemctl enable flatpak-cleanup.timer
