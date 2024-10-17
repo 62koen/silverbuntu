@@ -20,12 +20,12 @@ rpm-ostree install \
 
 # extensions
 rpm-ostree install \
-    gnome-shell-theme-yaru \
-    gnome-shell-extension-appindicator \
-    gnome-shell-extension-no-overview \
-    gnome-shell-extension-dash-to-dock \
-    gnome-shell-extension-user-theme \
-    gnome-shell-extension-drive-menu
+    gnome-shell-theme-yaru
+    # gnome-shell-extension-appindicator \
+    # gnome-shell-extension-no-overview \
+    # gnome-shell-extension-dash-to-dock \
+    # gnome-shell-extension-user-theme \
+    # gnome-shell-extension-drive-menu
 
 # programs
 rpm-ostree install \
