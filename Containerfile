@@ -49,8 +49,8 @@ FROM ghcr.io/ublue-os/${SOURCE_IMAGE}${SOURCE_SUFFIX}:${SOURCE_TAG}
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
 COPY build.sh /tmp/build.sh
-     root/ /
-     cosign.pub /etc/pki/containers/
+COPY root/ /
+COPY cosign.pub /etc/pki/containers/
 
 RUN mkdir -p /var/lib/alternatives && \
     /tmp/build.sh && \
