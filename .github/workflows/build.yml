@@ -13,9 +13,6 @@ on:
       - '**/README.md'
   workflow_dispatch:
 
-modules:
-  - from-file: common-packages.yml
-
 env:
   MY_IMAGE_NAME: "${{ github.event.repository.name }}"  # the name of the image produced by this build, matches repo names
   MY_IMAGE_DESC: "My Customized Universal Blue Image"
@@ -154,3 +151,6 @@ jobs:
           TAGS: ${{ steps.push.outputs.digest }}
           COSIGN_EXPERIMENTAL: false
           COSIGN_PRIVATE_KEY: ${{ secrets.SIGNING_SECRET }}
+
+modules:
+  - from-file: common-packages.yml
