@@ -29,6 +29,7 @@ rpm-ostree install \
 
 # programs
 rpm-ostree install \
+    distrobox \
     gcc \
     gnome-tweaks \
     make \
