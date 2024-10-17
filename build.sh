@@ -14,17 +14,19 @@ RELEASE="$(rpm -E %fedora)"
 
 # this installs a package from fedora repos
 rpm-ostree override remove \
+    gnome-classic-session \
+	gnome-classic-session-xsession \
     gnome-shell-extension-apps-menu \
     gnome-shell-extension-launch-new-instance \
     gnome-shell-extension-places-menu \
     gnome-shell-extension-window-list \
     gnome-shell-extension-background-logo
 
-rpm-ostree install \
+rpm-ostree install \ # repos
     https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \
     https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm 
 
-rpm-ostree install \
+rpm-ostree install \ # extensions
     gnome-shell-theme-yaru \
     gnome-shell-extension-appindicator \
     gnome-shell-extension-no-overview \
@@ -32,16 +34,14 @@ rpm-ostree install \
     gnome-shell-extension-user-theme \
     gnome-shell-extension-drive-menu
 
-rpm-ostree install \
+rpm-ostree install \ # apps
     gcc \
     gnome-tweaks \
     make \
     opendyslexic-fonts \
     samba
 
-# this would install a package from rpmfusion
-# rpm-ostree install vlc
-
-#### Example for enabling a System Unit File
-
-systemctl enable podman.socket
+systemctl enable dconf-update.service
+systemctl enable flatpak-add-flathub-repo.service
+systemctl enable flatpak-replace-fedora-apps.service
+systemctl enable flatpak-cleanup.timer
