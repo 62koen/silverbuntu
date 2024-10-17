@@ -55,7 +55,6 @@ COPY cosign.pub /etc/pki/containers/
 RUN mkdir -p /var/lib/alternatives && \
     mkdir -p /etc/dconf && \
     /tmp/build.sh && \
-    dconf write /org/gnome/shell/extensions/user-theme/name "'Yaru'" && \
     ostree container commit
 
 ## NOTES:
