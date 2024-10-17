@@ -54,6 +54,7 @@ COPY cosign.pub /etc/pki/containers/
 
 RUN mkdir -p /var/lib/alternatives && \
     mkdir -p /etc/dconf && \
+    mkdir /root/.cache && \
     mkdir /root/.cache/dconf && \
     /tmp/build.sh && \
     gnome-extensions enable appindicatorsupport@rgcjonas.gmail.com && \
